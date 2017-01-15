@@ -387,7 +387,7 @@ def program_hex(hex_data, first_page_only=False):
     data = {}
     for line in hex_data:
         num_bytes = int(line[1:3], 16)
-        address = int(line[3:7], 16) / 2
+        address = int(line[3:7], 16) // 2
         type = int(line[7:9], 16)
 
         if num_bytes > 0 and type == 0:
@@ -399,7 +399,7 @@ def program_hex(hex_data, first_page_only=False):
                 address += 1
 
     if first_page_only:
-        for page_address in data.keys():
+        for page_address in list(data.keys()):
             if page_address != VM_START_ADDRESS:
                 del (data[page_address])
 
@@ -408,8 +408,8 @@ def program_hex(hex_data, first_page_only=False):
         erase_flash_row(page_address)
 
     # Program hex in reverse (VM version then gets programmed last, so Crumble wont start if incomplete)
-    for page_address in sorted(data.keys(), reverse=True):
-        for address in sorted(range(page_address, page_address + page_size, 16), reverse=True):
+    for page_address in sorted(list(data.keys()), reverse=True):
+        for address in sorted(list(range(page_address, page_address + page_size, 16)), reverse=True):
             write_flash(address, data[page_address][address - page_address:address - page_address + 16])
 
 
