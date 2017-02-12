@@ -1,0 +1,3 @@
+import crumblepy
+
+crumblepy.run()

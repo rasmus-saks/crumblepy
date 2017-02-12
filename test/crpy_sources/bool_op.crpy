@@ -1,0 +1,5 @@
+while True:
+    if True and get_analog(C) > 100:
+        set_sparkle(0, 0, 10, 0)
+    else:
+        set_sparkle(0, 10, 0, 0)

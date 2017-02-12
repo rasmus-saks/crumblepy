@@ -1,0 +1,6 @@
+if get_digital(A) == 1:
+    set_output(D, 0)
+elif get_digital(B) == 1:
+    set_output(D, 0)
+else:
+    set_output(D, 1)

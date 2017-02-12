@@ -1,0 +1,5 @@
+my_var = get_digital(A)
+if my_var == 0:
+    set_output(D, 1)
+else:
+    set_output(D, 0)

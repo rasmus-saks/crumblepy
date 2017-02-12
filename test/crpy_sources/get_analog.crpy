@@ -1,0 +1,4 @@
+if get_analog(C) > 128:
+    set_output(D, 1)
+else:
+    set_output(D, 0)

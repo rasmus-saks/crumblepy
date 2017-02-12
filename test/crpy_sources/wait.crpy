@@ -1,0 +1,6 @@
+set_sparkle(0, 255, 0, 0)
+wait(250)
+wait(250)
+wait(250)
+wait(250)
+set_sparkle(0, 0, 255, 0)
