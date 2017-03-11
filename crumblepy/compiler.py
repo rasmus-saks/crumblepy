@@ -244,9 +244,7 @@ class Compiler:
         self.assembly.usonl()
 
     def wait(self, time_node):
-        if type(time_node) is not Num or type(time_node.n) is not int or time_node.n < 1:
-            raise CompileException("Wait time must be a positive integer of milliseconds", time_node)
-        self.assembly.pushl(time_node.n)
+        self.compile_expr(time_node)
         start = self.new_label()
         end = self.new_label()
         self.assembly.label(start)
