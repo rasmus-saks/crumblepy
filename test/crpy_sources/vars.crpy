@@ -1,3 +1,6 @@
+# Test variable assignment
+# Expected outcome:
+#   If input A is off, input D is set to on. Otherwise, input D is set to off.
 my_var = get_digital(A)
 if my_var == 0:
     set_output(D, 1)

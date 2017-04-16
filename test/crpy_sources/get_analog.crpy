@@ -1,3 +1,6 @@
+# Test get_analog function
+# Expected outcome:
+#  If analog input C is greater than 128, D is set to 1. D is set to 0 otherwise.
 if get_analog(C) > 128:
     set_output(D, 1)
 else:

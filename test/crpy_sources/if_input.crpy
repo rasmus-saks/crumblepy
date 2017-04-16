@@ -1,3 +1,8 @@
+# Test if-elif-else statements
+# Expected outcome:
+#   D set to 0 if A input is on
+#   D set to 0 if A input is off and B is on
+#   D set to 1 if both A and B are off
 if get_digital(A) == 1:
     set_output(D, 0)
 elif get_digital(B) == 1:

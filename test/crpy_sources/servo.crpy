@@ -1,3 +1,6 @@
+# Test set_servo function
+# Expected outcome:
+#   Servo connected to C will move to a random angle every second
 while True:
     set_servo(C, random(0, 360))
     wait(1000)

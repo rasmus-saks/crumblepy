@@ -1,1 +1,4 @@
+# Test set_output function
+# Expected outcome:
+#   D output is set to 1
 set_output(D, 1)

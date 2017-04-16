@@ -1,3 +1,7 @@
+# Test 'continue' and 'break' in loops
+# Expected outcome:
+#   If C input is less than 100, Sparkle 0 stays red until it is greater than or equal to 100 in which case
+#   the Sparkle stays red (even after changing C back to below 100)
 while True:
     if get_analog(C) < 100:
         set_sparkle(0, 10, 0, 0)

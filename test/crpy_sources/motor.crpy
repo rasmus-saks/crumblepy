@@ -1,3 +1,6 @@
+# Test set_motor function
+# Expected outcome:
+#   Motor 2 spins at 100% for one second and then stops
 set_motor_2(100)
 wait(1000)
 set_motor_2(0)

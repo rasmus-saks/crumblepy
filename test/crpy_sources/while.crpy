@@ -1,3 +1,6 @@
+# Test while loop
+# Expected outcome:
+#   If C input is greater than 128, D is set to 1 or 0 if not
 while True:
     if get_analog(C) > 128:
         set_output(D, 1)

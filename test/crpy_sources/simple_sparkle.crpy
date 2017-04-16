@@ -1,1 +1,4 @@
+# Test set_sparkle function
+# Expected outcome:
+#   Sparkle 0 is red
 set_sparkle(0, 255, 0, 0)

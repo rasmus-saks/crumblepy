@@ -1,2 +1,0 @@
-while True:
-    set_sparkle(0, get_analog(C), -0, 0)

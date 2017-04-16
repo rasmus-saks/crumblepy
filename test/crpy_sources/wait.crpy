@@ -1,3 +1,6 @@
+# Test wait function
+# Expected outcome:
+#   Sparkle 0 is red and turns green in 1000 milliseconds
 set_sparkle(0, 255, 0, 0)
 wait(250)
 wait(250)
