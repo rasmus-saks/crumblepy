@@ -1,12 +1,14 @@
 import argparse
 import sys
 
-from crumblepy.compiler import CompileException
-from .crumblepy import *
+from crumblepy.compiler import Compiler, CompileException
+from crumblepy.usb import send_byte_code
+
+crpy_compiler = Compiler()
 
 
 def run():
-    arg_parser = argparse.ArgumentParser(description="Compile .crpy onto a connected Crumble controller")
+    arg_parser = argparse.ArgumentParser(description="Compile a .crpy source file")
     arg_parser.add_argument("file", help="The .crpy file to compile")
     arg_parser.add_argument("--output", "-o",
                             help="File to save output to (instead of sending to controller over USB). "
@@ -36,5 +38,23 @@ def run():
             send_byte_code(code)
             print("Code sent")
 
-if __name__ == "__main__":
-    run()
+
+def get_assembly(file):
+    return compile(file, "assembly")
+
+
+def get_bytecode(file):
+    return compile(file, "bytecode")
+
+
+def compile(file, output_format):
+    global crpy_compiler
+    crpy_parser = Parser(file)
+    crpy_compiler = Compiler(output_format)
+    return crpy_compiler.compile(crpy_parser.root)
+
+
+def compile_to_device(file):
+    code = compile(file, "usb")
+    send_byte_code(code)
+    return code
