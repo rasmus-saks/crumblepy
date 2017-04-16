@@ -11,9 +11,10 @@ def run():
     arg_parser = argparse.ArgumentParser(description="Compile a .crpy source file")
     arg_parser.add_argument("file", help="The .crpy file to compile")
     arg_parser.add_argument("--output", "-o",
-                            help="File to save output to (instead of sending to controller over USB). "
+                            help="File to save output to. "
                                  "Use --format to specify format. If unspecified, output is instead printed to console")
-    arg_parser.add_argument("--format", "-f", help="Output format", choices=["bytecode", "assembly", "usb"],
+    arg_parser.add_argument("--format", "-f", help="Output format. Defaults to usb.",
+                            choices=["bytecode", "assembly", "usb"],
                             default="usb")
     args = arg_parser.parse_args()
 
