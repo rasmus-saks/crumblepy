@@ -7,7 +7,6 @@ builtins = [
     "get_digital",
     "get_analog",
     "set_sparkle",
-    "set_all_sparkles",
     "wait",
     "random",
     "set_motor_1",
