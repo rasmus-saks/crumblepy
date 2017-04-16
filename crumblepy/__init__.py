@@ -2,6 +2,7 @@ import argparse
 import sys
 
 from crumblepy.compiler import Compiler, CompileException
+from crumblepy.parser import Parser
 from crumblepy.usb import send_byte_code
 
 crpy_compiler = Compiler()
